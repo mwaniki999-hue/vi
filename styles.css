@@ -1,8 +1,8 @@
 :root {
   color-scheme: dark;
-  --ink: #0b0c10;
-  --panel: #11131a;
-  --panel-light: #191b25;
+  --ink: #14152b;
+  --panel: #171a32;
+  --panel-light: #20213d;
   --white: #fff;
   --muted: #a4a6b0;
   --pink: #ff007f;
@@ -24,7 +24,7 @@ html {
 body {
   margin: 0;
   isolation: isolate;
-  background: var(--ink);
+  background: linear-gradient(125deg, #10213b 0%, #211536 52%, #151b39 100%) fixed;
   color: var(--white);
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
@@ -85,7 +85,7 @@ button {
   justify-content: space-between;
   padding: 0 6.25%;
   border-bottom: 1px solid rgb(255 255 255 / 8%);
-  background: rgb(11 12 16 / 78%);
+  background: rgb(17 19 43 / 82%);
   backdrop-filter: blur(10px);
 }
 
@@ -109,9 +109,15 @@ main {
 }
 
 .wordmark-vi {
-  margin-left: 4px;
-  color: var(--pink);
-  text-shadow: 0 0 18px rgb(255 0 127 / 60%);
+  margin-left: 3px;
+  color: #ff91c9;
+  font-family: "Bodoni MT", "Didot", "Times New Roman", serif;
+  font-size: 1.14em;
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: -3px;
+  -webkit-text-stroke: 0.35px #ffdaeb;
+  text-shadow: 1px 2px 0 #86104e, 0 0 14px rgb(255 0 127 / 58%);
 }
 
 .wordmark-caption {
@@ -553,6 +559,9 @@ h2 em {
 }
 
 .duo-image {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
   width: min(100%, 900px);
   margin: 0 auto 24px;
 }
@@ -775,6 +784,19 @@ h2 em {
 .gallery-section {
   padding: 105px 0 115px;
   background: rgb(16 17 23 / 82%);
+}
+
+.gallery-full-image {
+  overflow: hidden;
+  margin: 0 0 16px;
+  border: 1px solid rgb(255 255 255 / 11%);
+  box-shadow: 0 18px 50px rgb(0 0 0 / 28%);
+}
+
+.gallery-full-image img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .gallery-grid {
@@ -1428,6 +1450,11 @@ h2 em {
 
   .duo-heading {
     margin-bottom: 36px;
+  }
+
+  .duo-image {
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
 
   .duo-bios {
